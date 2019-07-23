@@ -5,6 +5,7 @@ $color1-light: rgba(190, 176, 151, .4);
 $color2: rgb(181, 213, 105);
 $color3: rgb(128, 219, 212);
 $color4: rgb(116, 100, 92);
+$color4-light: rgba(116, 100, 92, .6);
 $color5: rgb(254, 254, 254);
 
 *,
@@ -13,6 +14,7 @@ $color5: rgb(254, 254, 254);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
 html {
@@ -31,25 +33,32 @@ body {
     align-items: center;
     width: 70rem;
     height: 100vh;
+    font-family: 'Pacifico', cursive;
 
     background: linear-gradient(315deg, $color2, $color3);
     box-shadow: 20px 0px 44px 9px rgba(0,0,0,0.67);
 
     .header {
         position: relative;
-        width: 95%;
+        width: 60rem;
         height: 20rem;
 
         .heading-primary {
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%) rotate(10deg);
             font-size: 7rem;
+            transform: translate(-50%, -50%) rotate(10deg);
+            transition: all .3s;
 
-            background: -webkit-linear-gradient(#eee, #333);
+            background: -webkit-linear-gradient(right,rgb(248, 42, 221), rgb(241, 245, 4));
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
+            &:hover {
+                transform: translate(-50%, -50%) rotate(10deg) scale(1.1);
+            }
         }
     }
 
@@ -58,28 +67,52 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 90%;
+            width: 60rem;
             height: 6rem;
 
             .input {
-                width: 100%;
-                height: 3rem;
+                width: 85%;
+                height: 5rem;
+                padding: 1rem .5rem;
                 font-size: 3rem;
                 text-align: center;
-                line-height: 2;
+                line-height: 1;
 
                 outline: none;
                 border: none;
                 background: transparent;
-                border-bottom: 2px solid $color4;
+                border-bottom: 2px solid $color4-light;
+                color: $color4-light;
+
+                transition: all .3s;
+
+                &::placeholder {
+                    color: $color4-light;
+                    opacity: .5;
+                }
+
+                &:focus {
+                    border-bottom: 2px solid $color4;
+                    color: $color4;
+                    transform: translateY(-1px);
+                }
             }
 
-            .icon {
+            .search-icon {
+                display: inline-block;
                 width: 3rem;
                 height: 3rem;
                 margin-left: 1rem;
+                stroke-width: 0;
+                stroke: currentColor;
+                fill: $color4-light;
+                transition: all .4s;
 
-                fill: $color4;
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1) rotate(360deg);
+                    fill: $color4;
+                }
             }
         }
     }
@@ -91,6 +124,8 @@ body {
     width: 60vw;
     min-height: 100vh;
     margin-left: 70rem;
+
+    font-family: 'Pacifico', cursive;
 
     background-color: $color5;
     border: .5rem solid $color1-light;
