@@ -7,6 +7,8 @@ $color3: rgb(128, 219, 212);
 $color4: rgb(116, 100, 92);
 $color4-light: rgba(116, 100, 92, .6);
 $color5: rgb(254, 254, 254);
+$color6: rgb(248, 42, 221);
+$color7: rgb(241, 245, 4);
 
 *,
 ::before,
@@ -24,7 +26,75 @@ html {
 
 body {
     display: flex;
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    color: $color4;
 }
+
+// Reusable elemnets
+
+.input {
+    width: 85%;
+    height: 5rem;
+    padding: 1rem .5rem;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid $color4-light;
+    color: $color4-light;
+
+    transition: all .3s;
+
+    &::placeholder {
+        color: $color4-light;
+        opacity: .5;
+    }
+
+    &:focus {
+        border-bottom: 2px solid $color4;
+        color: $color4;
+        transform: translateY(-1px);
+    }
+}
+
+.btn {
+    width: 10rem;
+    height: 4rem;
+    padding: 0;
+
+    display: table-cell;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: $color5;
+    background: linear-gradient(to right, $color6, $color7);
+    border: 2px solid $color5;
+    border-radius: 2rem;
+    outline: none;
+
+    -webkit-box-shadow: 0px 14px 45px -17px rgba(0,0,0,0.67);
+    -moz-box-shadow: 0px 14px 45px -17px rgba(0,0,0,0.67);
+    box-shadow: 0px 14px 45px -17px rgba(0,0,0,0.67);
+
+    transition: all .3s;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        -webkit-box-shadow: 0px 13px 29px -6px rgba(0,0,0,0.67);
+        -moz-box-shadow: 0px 13px 29px -6px rgba(0,0,0,0.67);
+        box-shadow: 0px 13px 29px -6px rgba(0,0,0,0.67);
+        transform: translateY(1px);
+    }
+}
+
+//
 
 .search-bar {
     position: fixed;
@@ -33,7 +103,6 @@ body {
     align-items: center;
     width: 70rem;
     height: 100vh;
-    font-family: 'Pacifico', cursive;
 
     background: linear-gradient(315deg, $color2, $color3);
     box-shadow: 20px 0px 44px 9px rgba(0,0,0,0.67);
@@ -51,7 +120,7 @@ body {
             transform: translate(-50%, -50%) rotate(10deg);
             transition: all .3s;
 
-            background: -webkit-linear-gradient(right,rgb(248, 42, 221), rgb(241, 245, 4));
+            background: -webkit-linear-gradient(right,$color6, $color7);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -63,39 +132,22 @@ body {
     }
 
     .search {
-        &__name {
+        &__beer {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 60rem;
             height: 6rem;
 
-            .input {
+            .input, name{
                 width: 85%;
-                height: 5rem;
-                padding: 1rem .5rem;
-                font-size: 3rem;
-                text-align: center;
-                line-height: 1;
+            }
 
-                outline: none;
-                border: none;
+            #search-btn {
                 background: transparent;
-                border-bottom: 2px solid $color4-light;
-                color: $color4-light;
-
-                transition: all .3s;
-
-                &::placeholder {
-                    color: $color4-light;
-                    opacity: .5;
-                }
-
-                &:focus {
-                    border-bottom: 2px solid $color4;
-                    color: $color4;
-                    transform: translateY(-1px);
-                }
+                border: none;
+                position: relative;
+                outline: none;
             }
 
             .search-icon {
@@ -115,6 +167,30 @@ body {
                 }
             }
         }
+
+        &__abv,  &__ibu, &__ebc {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 60rem;
+            height: 7rem;
+            margin-left: 5rem;
+
+            p {
+                margin-right: 5rem;
+            }
+
+            .input, abv {
+                width: 7rem;
+                margin-right: 5rem;
+            }
+
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+              }
+        }
+
+       
     }
 }
 
@@ -124,8 +200,6 @@ body {
     width: 60vw;
     min-height: 100vh;
     margin-left: 70rem;
-
-    font-family: 'Pacifico', cursive;
 
     background-color: $color5;
     border: .5rem solid $color1-light;
@@ -138,6 +212,12 @@ body {
 
         font-size: 8rem;
         color: $color1-light;
+
+        transition: all .4s;
+
+        &:hover {
+            transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+        }
     }
 
 }

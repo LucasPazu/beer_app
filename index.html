@@ -19,15 +19,44 @@
         </header>
 
         <div class="search">
-            <div class="search__name">
-                <input class="input" id="input-beer-name" type="text" placeholder="type in beer name" />
-                <svg class="search-icon" id="search-icon">
-                    <use xlink:href="./SVGs/sprite.svg#icon-search"></use>
-                </svg>
+            <div class="search__beer">
+                <input class="input name" id="input-beer-name" type="text" placeholder="type in beer name" />
+                <button id="search-btn">
+                    <svg class="search-icon" id="search-icon">
+                        <use xlink:href="./SVGs/sprite.svg#icon-search"></use>
+                    </svg>
+                </button>
+
             </div>
         </div>
 
+        <div class="search__abv">
+            <p>ABV: </p>
+            <label class="label"for="min-abv">min %:</label>
+            <input type="number" class="input abv" id="min-abv" min="0" max="100">
+            <label class="label"for="max-abv">max %:</label>
+            <input type="number" class="input abv" id="max-abv" min="0" max="100">
+        </div>
 
+        <div class="search__ibu">
+            <p>IBU: </p>
+            <label class="label"for="min-ibu">min :</label>
+            <input type="number" class="input ibu" id="min-ibu" min="0" max="100">
+            <label class="label"for="max-ibu">max :</label>
+            <input type="number" class="input ibu" id="max-ibu" min="0" max="100">
+        </div>
+
+        <div class="search__ebc">
+            <p>EBC: </p>
+            <label class="label"for="min-ebc">min :</label>
+            <input type="number" class="input ebc" id="min-ebc" min="0" max="100">
+            <label class="label"for="max-ebc">max :</label>
+            <input type="number" class="input ebc" id="max-ebc" min="0" max="100">
+        </div>
+
+        <div class="search__random">
+            <button id="random-beer" class="btn random-beer">random</button>
+        </div>
     </div>
     <div class="results-box">
         <h2 class="info">Results here</h2>
