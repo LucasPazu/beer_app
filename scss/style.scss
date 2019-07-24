@@ -198,13 +198,14 @@ body {
     position: relative;
     display: flex;
     width: 60vw;
+    flex: 1;
     min-height: 100vh;
     margin-left: 70rem;
 
     background-color: $color5;
     border: .5rem solid $color1-light;
 
-    .info {
+    .info, .incorrect-data {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -219,5 +220,11 @@ body {
             transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
         }
     }
+
+    .incorrect-data {
+        color: rgb(221, 80, 80);
+    }
+
+
 
 }

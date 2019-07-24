@@ -133,11 +133,12 @@ body {
   position: relative;
   display: flex;
   width: 60vw;
+  flex: 1;
   min-height: 100vh;
   margin-left: 70rem;
   background-color: #fefefe;
   border: 0.5rem solid rgba(190, 176, 151, 0.4); }
-  .results-box .info {
+  .results-box .info, .results-box .incorrect-data {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -145,5 +146,7 @@ body {
     font-size: 8rem;
     color: rgba(190, 176, 151, 0.4);
     transition: all .4s; }
-    .results-box .info:hover {
+    .results-box .info:hover, .results-box .incorrect-data:hover {
       transform: translate(-50%, -50%) scale(1.1) rotate(5deg); }
+  .results-box .incorrect-data {
+    color: #dd5050; }
