@@ -183,6 +183,12 @@ body {
           margin-right: 2rem; } }
     .search-bar .search__abv input[type=number]::-webkit-inner-spin-button, .search-bar .search__ibu input[type=number]::-webkit-inner-spin-button, .search-bar .search__ebc input[type=number]::-webkit-inner-spin-button {
       -webkit-appearance: none; }
+  .search-bar .footer {
+    margin-top: 40%;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace; }
 
 .results-box {
   position: relative;
