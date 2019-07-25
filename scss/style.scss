@@ -178,6 +178,10 @@ body {
 
             .input, name{
                 width: 85%;
+                @media (max-width: 950px) {
+                    margin-top: 5rem;
+                    font-size: 1.6rem;
+                }
             }
 
             #search-btn {
@@ -222,6 +226,7 @@ body {
             margin-left: 5rem;
             @media (max-width: 950px) {
                 margin-left: 3rem;
+                margin-top: 2rem;
             }
 
             p {

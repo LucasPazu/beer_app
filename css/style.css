@@ -131,6 +131,10 @@ body {
         width: 30rem; } }
     .search-bar .search__beer .input, .search-bar .search__beer name {
       width: 85%; }
+      @media (max-width: 950px) {
+        .search-bar .search__beer .input, .search-bar .search__beer name {
+          margin-top: 5rem;
+          font-size: 1.6rem; } }
     .search-bar .search__beer #search-btn {
       background: transparent;
       border: none;
@@ -166,7 +170,8 @@ body {
         font-size: 1.6rem; } }
     @media (max-width: 950px) {
       .search-bar .search__abv, .search-bar .search__ibu, .search-bar .search__ebc {
-        margin-left: 3rem; } }
+        margin-left: 3rem;
+        margin-top: 2rem; } }
     .search-bar .search__abv p, .search-bar .search__ibu p, .search-bar .search__ebc p {
       margin-right: 5rem; }
     @media (max-width: 950px) {
