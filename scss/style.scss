@@ -81,6 +81,8 @@ body {
 
     transition: all .3s;
 
+    display: none; // I need to fix it
+
     &:hover {
         cursor: pointer;
         transform: translateY(-1px);
@@ -101,11 +103,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70rem;
+    width: 60rem;
     height: 100vh;
 
     background: linear-gradient(315deg, $color2, $color3);
-    box-shadow: 20px 0px 44px 9px rgba(0,0,0,0.67);
+    
 
     .header {
         position: relative;
@@ -190,17 +192,19 @@ body {
               }
         }
 
-       
     }
 }
 
 .results-box {
     position: relative;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 60vw;
     flex: 1;
     min-height: 100vh;
-    margin-left: 70rem;
+    margin-left: 60rem;
 
     background-color: $color5;
     border: .5rem solid $color1-light;
@@ -225,6 +229,80 @@ body {
         color: rgb(221, 80, 80);
     }
 
+}
 
+.beer {
+    display: flex;
+    width: 95%;
+    height: 24rem;
+    @media (max-width: 1500px) {
+        height: 45rem;
+    }
+    margin-bottom: 2rem;
+
+    transition: all .3s;
+
+    border-bottom: 3px solid $color2;
+
+    .left {
+        width: 45rem;
+
+        .beer-name-box {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+
+            .beer-name {
+                font-size: 2.5rem;
+            }
+
+            .beer-tagline {
+                font-size: 1.5rem;
+            }
+
+        }
+
+        .properties-box {
+            display: flex;
+            margin-top: 1rem;
+
+            .property {
+                width: 13rem;
+                height: 4rem;
+                margin-right: 2rem;
+                background-color: $color4-light;
+                border-radius: 1rem;
+
+                font-size: 2rem;
+                color: $color5;
+                text-align: center;
+
+                transition: all .3s;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    background-color: $color4;
+                }
+            }
+
+
+        }
+
+    }
+
+    .right {
+        flex: 1;
+
+        .description {
+
+            .text {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+    }
 
 }

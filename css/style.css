@@ -52,7 +52,8 @@ body {
   -webkit-box-shadow: 0px 14px 45px -17px rgba(0, 0, 0, 0.67);
   -moz-box-shadow: 0px 14px 45px -17px rgba(0, 0, 0, 0.67);
   box-shadow: 0px 14px 45px -17px rgba(0, 0, 0, 0.67);
-  transition: all .3s; }
+  transition: all .3s;
+  display: none; }
   .btn:hover {
     cursor: pointer;
     transform: translateY(-1px); }
@@ -67,10 +68,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70rem;
+  width: 60rem;
   height: 100vh;
-  background: linear-gradient(315deg, #b5d569, #80dbd4);
-  box-shadow: 20px 0px 44px 9px rgba(0, 0, 0, 0.67); }
+  background: linear-gradient(315deg, #b5d569, #80dbd4); }
   .search-bar .header {
     position: relative;
     width: 60rem;
@@ -132,10 +132,13 @@ body {
 .results-box {
   position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 60vw;
   flex: 1;
   min-height: 100vh;
-  margin-left: 70rem;
+  margin-left: 60rem;
   background-color: #fefefe;
   border: 0.5rem solid rgba(190, 176, 151, 0.4); }
   .results-box .info, .results-box .incorrect-data {
@@ -150,3 +153,46 @@ body {
       transform: translate(-50%, -50%) scale(1.1) rotate(5deg); }
   .results-box .incorrect-data {
     color: #dd5050; }
+
+.beer {
+  display: flex;
+  width: 95%;
+  height: 24rem;
+  margin-bottom: 2rem;
+  transition: all .3s;
+  border-bottom: 3px solid #b5d569; }
+  @media (max-width: 1500px) {
+    .beer {
+      height: 45rem; } }
+  .beer .left {
+    width: 45rem; }
+    .beer .left .beer-name-box {
+      display: flex;
+      flex-direction: column;
+      align-items: left; }
+      .beer .left .beer-name-box .beer-name {
+        font-size: 2.5rem; }
+      .beer .left .beer-name-box .beer-tagline {
+        font-size: 1.5rem; }
+    .beer .left .properties-box {
+      display: flex;
+      margin-top: 1rem; }
+      .beer .left .properties-box .property {
+        width: 13rem;
+        height: 4rem;
+        margin-right: 2rem;
+        background-color: rgba(116, 100, 92, 0.6);
+        border-radius: 1rem;
+        font-size: 2rem;
+        color: #fefefe;
+        text-align: center;
+        transition: all .3s; }
+        .beer .left .properties-box .property:hover {
+          transform: translateY(-2px);
+          background-color: #74645c; }
+  .beer .right {
+    flex: 1; }
+    .beer .right .description .text {
+      font-size: 1.4rem; }
+  .beer:hover {
+    transform: translateY(-2px); }
